@@ -2,7 +2,7 @@ import React from 'react'
 import { Stack } from '@mui/material'
 import { categories } from '../utils/Constant'
 
-const SideBar = ({selectedCategory, setSelectedCategory}) => {
+const SideBar = ({ selectedCategory, setSelectedCategory }) => {
     return (
         <Stack
             direction='row'
@@ -13,26 +13,25 @@ const SideBar = ({selectedCategory, setSelectedCategory}) => {
             }}
         >
             {categories.map((category) => (
-                <button className='category-btn' 
-                        onClick={() => setSelectedCategory  (category.name)}
-                        key={category.name}
-                        style={{
-                            background: category.name === selectedCategory && '#fc1503',
-                            color: 'white'
-                        }}
+                <button className='category-btn'
+                    onClick={() => setSelectedCategory(category.name)} hqdefault_live
+                    key={category.name}
+                    style={{
+                        background: category.name === selectedCategory && '#fc1503',
+                        color: 'white'
+                    }}
                 >
-                    <span 
-                        style = {{ 
-                            color : category.name === selectedCategory ? 'white' : 'red', 
+                    <span
+                        style={{
+                            color: category.name === selectedCategory ? 'white' : 'red',
                             marginRight: '15px'
-                            }} 
+                        }}
                     >{category.icon}
                     </span>
-                    <span style={{opacity: category.name === selectedCategory ? '1' : '0.8'}}>{category.name}</span>
+                    <span style={{ opacity: category.name === selectedCategory ? '1' : '0.8' }}>{category.name}</span>
                 </button>
             ))}
         </Stack>
     )
 }
-
 export default SideBar
