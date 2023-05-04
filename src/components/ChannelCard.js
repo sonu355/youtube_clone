@@ -8,16 +8,16 @@ const ChannelCard = ({ channelDetail }) => {
   console.log(channelDetail)
 
   return (
-    <Box
-      sx={{ 
-            boxShadow: 'none', 
-            borderRadius: '20px', 
-            alignItems:'center', 
-            justifyContent: 'center', 
-            width:{xs:'270px',md: '270'},
-            margin: 'auto',
-            display:'flex'
-          }}
+    <Box ChannelDetail
+      sx={{
+        boxShadow: 'none',
+        borderRadius: '20px',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: { xs: '270px', md: '270px' },
+        margin: 'auto',
+        display: 'flex'
+      }}
     >
       <Link to={`/channel/${channelDetail?.id?.channelId}`}>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', color: '#FFF' }}>
@@ -26,13 +26,13 @@ const ChannelCard = ({ channelDetail }) => {
             alt={channelDetail?.snippet?.title}
             sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: '2', border: '1px solid #e3e3e3' }}
           />
-          <Typography variant="h6" sx={{ mt:'10px'}}>
+          <Typography variant="h6" sx={{ mt: '10px' }}>
             {channelDetail?.snippet?.title}
-            <CheckCircle sx={{ fontSize: 18, color: 'gray', ml:'5px'}}/>
+            <CheckCircle sx={{ fontSize: 18, color: 'gray', ml: '5px' }} />
           </Typography>
           {channelDetail?.statistics?.subscriberCount && (
             <Typography>
-              {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString} Subs-cribers
+              {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString()} Subscribers
             </Typography>
           )}
         </CardContent>
@@ -40,5 +40,4 @@ const ChannelCard = ({ channelDetail }) => {
     </Box>
   )
 }
-
 export default ChannelCard
