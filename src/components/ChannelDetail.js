@@ -9,6 +9,7 @@ const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState(null)
   const [videos, setVideos] = useState([])
   const { id } = useParams()
+
   console.log(channelDetail, videos)
 
   useEffect(() => {
@@ -23,12 +24,16 @@ const ChannelDetail = () => {
     <Box minHeight='95vh'>
       <Box>
         <div style={{
-                      background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(206,3,184,1) 35%, rgba(0,212,255,1) 100%)',
-                      zIndex: 10,
-                      height: '300px'
-                    }} 
+          background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(206,3,184,1) 35%, rgba(0,212,255,1) 100%)',
+          zIndex: 10,
+          height: '300px'
+        }}
         />
-       <ChannelCard channelDetail={channelDetail}/>
+        <ChannelCard channelDetail={channelDetail} marginTop="-110px" />
+      </Box>
+      <Box display='flex' p='2'>
+        <Box sx={{ mr: { sx: '90px' } }} />
+        <Videos videos={videos} />
       </Box>
     </Box>
   )
